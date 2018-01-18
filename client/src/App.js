@@ -1,24 +1,39 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Route } from 'react-router-dom';
 import Home from './components/Home';
-import Professional from './components/Professional'
-import Family from './components/Family'
-import Hobbies from './components/Hobbies'
-import YourLost from './components/YourLost'
-import { Switch } from 'react-router-dom'
+import About from './components/About';
+import Reviews from './components/Reviews';
+import Videos from './components/Videos';
+import YourLost from './components/YourLost';
+import { Switch } from 'react-router-dom';
+import Footer from './components/Footer'
+
+import 'semantic-ui-css/semantic.min.css';
 
 const App = () => (
-  <div>
-  <Switch>
-  <Route exact path='/' component={Home} />
-  <Route path='/Professional' component={Professional} />
-  <Route path='/Family' component={Family} />
-  <Route path='/Hobbies' component={Hobbies} />s
-  <Route component={YourLost} />
-  </Switch>
+  <div style={styles.backgroundImage}>
+    <Switch>
+      <Route exact path='/' component={Home} />
+      <Route path='/About' component={About} />
+      <Route path='/Reviews' component={Reviews} />
+      <Route path='/Videos' component={Videos} />
+      <Route component={YourLost} />
+    </Switch>
+    <br />
+    <Footer />
   </div>
 
 )
 
+const styles = {
+  image: {
+  //  backgroundImage: "url("+ Wallpaper + ")",
+    resizeMode: "stretch",
+    backgroundRepeat: "no-repeat",
+    flex: 1,
+    alignSelf: 'stretch',
+    width: null,
+  },
+}
 
 export default App;
